@@ -1,3 +1,5 @@
+#!/bin/bash
+
 if [ ! -f "NOD.sh" ] || [ ! -f "NOK1.sh" ]; then
     echo "Ошибка: скрипты NOD.sh или NOK1.sh не найдены в текущей директории!"
     exit 1
