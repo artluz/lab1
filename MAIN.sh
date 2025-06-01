@@ -1,13 +1,13 @@
 #!/bin/bash
 
 if [ ! -f "script_NOD.sh" ] || [ ! -f "NOK1.sh" ]; then
-    echo "Ошибка: скрипты NOD.sh или NOK1.sh не найдены в текущей директории!"
+    echo "Ошибка: скрипты script_NOD.sh или NOK1.sh не найдены в текущей директории!"
     exit 1
 fi
 
 if [ ! -x "script_NOD.sh" ] || [ ! -x "NOK1.sh" ]; then
     echo "Делаем скрипты исполняемыми..."
-    chmod +x NOD.sh NOK1.sh
+    chmod +x script_NOD.sh NOK1.sh
 fi
 
 echo "Введите два числа для вычисления НОД и НОК:"
@@ -24,7 +24,7 @@ echo "Результаты вычислений:"
 echo "---------------------"
 
 echo "НОД чисел $num1 и $num2:"
-./NOD.sh "$num1" "$num2"
+./script_NOD.sh "$num1" "$num2"
 
 echo ""
 
