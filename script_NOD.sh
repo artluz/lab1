@@ -1,31 +1,15 @@
 #!/bin/bash
 
-gcd() {
-    local a=$1
-    local b=$2
-    
-    while [ $b -ne 0 ]; do
-        local temp=$b
-        b=$((a % b))
-        a=$temp
-    done
-    
-    echo $a
-}
+if [ $# -ne 2 ]; then
+    echo "Использование: $0 число1 число2"
+    exit 1
+fi
 
-echo "Нахождение наибольшего общего делителя (НОД) двух чисел"
-
-read -p "Введите первое число: " num1
-
-while ! [[ "$num1" =~ ^[0-9]+$ ]]; do
-    read -p "Ошибка! Введите целое число: " num1
+a=$1; b=$2
+while [ $b -ne 0 ]; do
+    temp=$b
+    b=$((a % b))
+    a=$temp
 done
 
-read -p "Введите второе число: " num2
-
-while ! [[ "$num2" =~ ^[0-9]+$ ]]; do
-    read -p "Ошибка! Введите целое число: " num2
-done
-
-result=$(gcd "$num1" "$num2")
-echo "НОД чисел $num1 и $num2 равен: $result"
+echo "НОД $1 и $2: $a"
